@@ -18,6 +18,7 @@ This project enables the following Kanopi / Pantheon / Drupal integrations:
 - Prevents the user from updating Drupal core with Drush
 - Configures the trusted host patterns to avoid a warning that is not applicable to Panthoen
 - Ignores large cache directories (e.g. node modules and bower components)
+- Orders the alternate settings files for Kanopi development
 
 ## Enabling this project
 
@@ -41,6 +42,12 @@ This project must be enabled in the top-level composer.json file, or it will be 
 }
 ```
 
-## Versions
+## Enable using CLI Composer.json Configuration
 
-Use version "^8" for Drupal 8, and version "^9" for Drupal 9.
+Run the following commands in order to update your composer.json file.
+
+```
+composer config allow-plugins.pantheon-systems/drupal-integrations true
+composer config allow-plugins.kanopi/drupal-integrations true
+composer require "pantheon-systems/drupal-integrations:^10" "kanopi/drupal-integrations:^10"
+```
